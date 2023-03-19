@@ -11,7 +11,7 @@ collection = db["soccer_events_sofascore_history"]
 # result = collection.delete_many({})
 # print(result.deleted_count, "documentos excluídos")
 
-daysRange = 1
+daysRange = 5
 
 # Define a data atual
 currentDate = datetime.now()

@@ -15,7 +15,7 @@ print(result.deleted_count, "documentos excluídos")
 # Define a data atual
 currentDate = datetime.now()
 # Add um dia da data atual
-#currentDate += timedelta(days=1)
+currentDate += timedelta(days=1)
 strDate = currentDate.strftime("%Y-%m-%d")
 # Imprime a data no formato "yyyy-mm-dd"
 print('Processando: ' + strDate)
@@ -136,9 +136,9 @@ for doc in resultList:
     strAwayData = ''
 
     if 'homeData' in doc:
-        strHomeData = '\n[*Médias Mandante* | Gols marcados (C): ' + str(doc['homeData']['average_goals']) + ' - Gols sofridos (C): ' + str(doc['homeData']['average_goals_conceded']) + ']'
+        strHomeData = '\n*Médias Mandante* | Gols marcados (C): ' + str(doc['homeData']['average_goals']) + ' - Gols sofridos (C): ' + str(doc['homeData']['average_goals_conceded'])
     if 'awayData' in doc:
-        strAwayData = '\n[*Médias Visitante* | Gols marcados (F): ' + str(doc['awayData']['average_goals']) + ' - Gols sofridos (F): ' + str(doc['awayData']['average_goals_conceded']) + ']'
+        strAwayData = '\n*Médias Visitante* | Gols marcados (F): ' + str(doc['awayData']['average_goals']) + ' - Gols sofridos (F): ' + str(doc['awayData']['average_goals_conceded'])
 
     print('\n', '*' + str(doc['event']['tournament']['name']), '-', str(doc['event']['tournament']['category']['name']) + '*', '|', doc['startDate'], '-', '*' + str(doc['event']['homeTeam']['name']) + '*', 'x', '*' + str(doc['event']['awayTeam']['name']) + '*', strHomeData, strAwayData)
 
